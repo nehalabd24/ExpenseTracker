@@ -1,38 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(46, 45, 45);
+  border-radius: 2px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rgb(245, 245, 245);
   display: flex;
-  flex-direction: column;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  min-width: 25%;
+  background-color: transparent;
+  height: 90vh;
+}
+
+.header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 20px;
+}
+
+.balance {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.balanceAmount {
+  font-size: 23px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.incomeAndExpenses {
+  margin: 15px 0;
+  display: flex;
+  padding: 15px 0;
+  box-shadow: 1px 2px 7px 0px rgba(173, 166, 166, 0.75);
+  background-color: white;
+  justify-content: center;
+}
+
+.expenses {
+  height: 50px;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  width: 49%;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+.expenses .income {
+  display: block;
+  font-weight: 500;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.divider {
+  width: 2px;
+  background-color: rgb(240, 238, 238);
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.history {
+  margin-top: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.plus {
+  display: flex;
+  box-shadow: 1px 2px 3px 0px rgba(173, 166, 166, 0.55);
+  background-color: white;
+  padding: 12px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-right: 5px solid green;
+}
+
+.minus {
+  display: flex;
+  box-shadow: 1px 2px 3px 0px rgba(173, 166, 166, 0.55);
+  background-color: white;
+  padding: 12px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-right: 5px solid red;
+}
+
+.newTransaction {
+  font-weight: 500;
+  margin: 25px 0 20px 0;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid rgb(206, 205, 205);
+}
+
+.input {
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0;
+  border: 1px solid rgb(206, 205, 205);
+}
+
+label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.info {
+  font-size: 15px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.transactionAddBtn {
+  background-color: rgb(157, 114, 187);
   color: white;
+  outline: none;
+  border: none;
+  margin: 5px 0;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.list {
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 1px 2px 3px 0px rgba(173, 166, 166, 0.55);
+}
+
+.list li:hover .delete {
+  opacity: 1;
+}
+
+.delete {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
